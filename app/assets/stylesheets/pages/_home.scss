@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+body {
+  background: #FFF;
+}
+
+.home-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 55vh;
+  p{
+   color: #B2B2B2;
+  }
+}
+
+.logo-home {
+  width: 50%;
+}
+
+.home-explanation {
+  // padding: 0px 8vw 0px 8vw;
+  // width: 100%;
+  height: 35vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.find-explaination, .ask-description, .post-description {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  h3{
+    margin-bottom: 10px;
+    color: #FFC517;
+  }
+  hr {
+    border: 2px solid;
+    color: #FFC517;
+    width: 10%;
+    margin: .3rem 0 1.7rem 0;
+  }
+  p{
+    text-align: center;
+    padding: 0 .5em;
+    line-height: 1.8em;
+  }
+}
+
+.img-explaination{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #FD8D34;
+  }

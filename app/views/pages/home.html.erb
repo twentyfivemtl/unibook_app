@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-12">
+        <h1>DASHBOARD PAGE</h1>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-12">
+          <div class="home-banner">
+            <img class="logo-home hidden-xs hidden-sm" src="/assets/logo-home-banner.png">
+            <h3>University platform for courses</h3>
+            <p>Learning made easy for you!</p>
+          </div>
+          <div class="home-explanation">
+            <div class="find-explaination">
+              <img class="img-explaination" src="/assets/find-home-description.png">
+              <h3><strong>FIND</strong></h3>
+              <hr>
+              <p>Find past finals, midterms, assignments, notes etc.</p>
+            </div>
+            <div class="ask-description">
+              <img class="img-explaination" src="/assets/ask-home-description.png">
+              <h3><strong>ASK</strong></h3>
+              <hr>
+              <p>Ask anything related to a specific course.</p>
+            </div>
+            <div class="post-description">
+              <img class="img-explaination" src="/assets/post-home-description.png">
+              <h3><strong>POST</strong></h3>
+              <hr>
+              <p>Post helpful study material to help each other.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<% end %>
