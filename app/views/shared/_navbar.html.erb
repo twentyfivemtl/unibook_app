@@ -42,9 +42,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "LOG IN"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "SIGN UP"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
+      <%= link_to t(".sign_in", default: "LOG IN" ), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "SIGN UP"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -59,4 +59,5 @@
     </div>
   </div>
 </div>
+
 
