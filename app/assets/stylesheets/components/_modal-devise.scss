@@ -1,27 +1,52 @@
 /* Modal */
-.modal {
-  color: #B2B2B2;
-}
+
 
 .modal-content {
+  font-size: 12.5px;
   text-align: center;
+  color: #B2B2B2;
   ul {
     list-style: none;
+    padding: 0;
+  }
+  p{
+    font-size: 25px;
+    font-weight: 300;
+    color: black;
+    padding-top: 20px;
+  }
+  .btn-primary {
+    width: 90%;
+    margin: 15px 0px;
+  }
+  .btn-devise-ubk {
+    background: #FFC517;
+    border: #FFC517;
+    width: 90%;
+    margin-top: 15px;
+    color: #FFF;
+    padding: 0;
+  }
+  .btn-devise-ubk:hover {
+    background: #E8B415;
   }
 }
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+.modal-box-univ {
+    background: white;
+    color: grey;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.facebook-custom {
+  height: 40px;
+  width: 90%;
+  color: white;
+  background: #3c66c4;
+}
+
+.facebook-custom:hover {
+  background:#315997;
+  color: white;
 }
 
 .modal-box {
@@ -31,3 +56,9 @@
     padding: 10px;
   }
 
+.hr-devise {
+  border: 0.25px solid;
+  color: #B2B2B2;
+  opacity: 0.6;
+  width: 90%;
+}

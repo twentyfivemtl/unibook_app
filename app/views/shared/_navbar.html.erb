@@ -77,12 +77,9 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <ul>
-          <li>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <br>
-          </li>
             <%= form_for(:user, :url => registration_path(:user)) do |f| %>
             <p>Sign Up For Free</p>
+            <hr class="hr-devise">
           <li>
             <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name", class: "modal-box"%>
           </li>
@@ -90,8 +87,7 @@
             <%= f.text_field :email, required: true, autofocus: true, placeholder: "Email", class: "modal-box" %>
           </li>
           <li>
-            <p>University</p>
-            <%= f.select :university, options_for_select(%w[Mcgill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box" %>
+            <%= f.select :university, options_for_select(%w[Mcgill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box modal-box-univ" %>
           </li>
           <li>
             <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "modal-box" %>
@@ -100,14 +96,15 @@
             <%= f.password_field :password_confirmation, required: true, placeholder: "Password confirmation", class: "modal-box" %>
           </li>
           <li>
-            <%= f.submit 'Sign up', class: "modal-box" %>
+            <%= f.submit 'Sign up', class: "modal-box btn btn-devise-ubk" %>
           </li>
+            <hr>
             <% end %>
-          <li>
+          <li >
             <%= render "devise/shared/links" %>
           </li>
           <li>
-            <a href="#myModal" data-toggle="modal" data-dismiss="modal">Log In</a>
+            <button type="button" class="btn btn-primary" href="#myModal" data-toggle="modal" data-dismiss="modal">Log In</button>
           </li>
         </ul>
     </div>
