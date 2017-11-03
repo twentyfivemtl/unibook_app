@@ -42,10 +42,77 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "LOG IN" ), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "SIGN UP"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <% end %>
+      <!-- Button trigger modal -->
+      <a class="navbar-wagon-item navbar-wagon-link" data-toggle="modal" data-target="#myModal">Log In</a>
+      <a class="navbar-wagon-item navbar-wagon-link" data-toggle="modal" data-target="#myModal2">Sign Up</a>
+    <% end %>
   </div>
+
+<!-- Button trigger modal -->
+
+<!-- LOGIN Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= f.text_field :email %>
+        <%= f.password_field :password %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+        <%= f.submit 'Log in' %>
+        <%= link_to "Forgot your password?", new_password_path(:user) %>
+        <% end %>
+        <a href="#myModal2" data-toggle="modal" data-dismiss="modal">Sign Up</a>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SIGNUP Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <ul>
+          <li>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <br>
+          </li>
+            <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+            <p>Sign Up For Free</p>
+          <li>
+            <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name", class: "modal-box"%>
+          </li>
+          <li>
+            <%= f.text_field :email, required: true, autofocus: true, placeholder: "Email", class: "modal-box" %>
+          </li>
+          <li>
+            <p>University</p>
+            <%= f.select :university, options_for_select(%w[Mcgill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.password_field :password_confirmation, required: true, placeholder: "Password confirmation", class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.submit 'Sign up', class: "modal-box" %>
+          </li>
+            <% end %>
+          <li>
+            <%= render "devise/shared/links" %>
+          </li>
+          <li>
+            <a href="#myModal" data-toggle="modal" data-dismiss="modal">Log In</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
