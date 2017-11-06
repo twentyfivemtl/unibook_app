@@ -101,7 +101,7 @@
             <%= f.text_field :email, required: true, autofocus: true, placeholder: "Email", class: "modal-box" %>
           </li>
           <li>
-            <%= f.select :university, options_for_select(%w[Mcgill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box modal-box-univ" %>
+            <%= f.select :university, options_for_select(%w[McGill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box modal-box-univ" %>
           </li>
           <li>
             <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "modal-box" %>
