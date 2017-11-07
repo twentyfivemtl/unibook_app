@@ -56,10 +56,10 @@
           <p>Welcome Back !</p>
           <hr class="hr-devise">
         <li>
-          <%= f.text_field :email, placeholder: "Email address", class: "modal-box" %>
+          <%= f.text_field :email, required: true, placeholder: "Email address", class: "modal-box" %>
         </li>
         <li>
-          <%= f.password_field :password, placeholder: "Password", class: "modal-box" %>
+          <%= f.password_field :password, required: true, placeholder: "Password", class: "modal-box" %>
         </li>
         <li>
           <%= f.check_box :remember_me %>
@@ -101,7 +101,7 @@
             <%= f.text_field :email, required: true, autofocus: true, placeholder: "Email", class: "modal-box" %>
           </li>
           <li>
-            <%= f.select :university, options_for_select(%w[McGill Concordia Others]), {:include_blank => "Select your university" }, class: "modal-box modal-box-univ" %>
+            <%= f.select :university, options_for_select(%w[McGill Concordia Others]), {:include_blank => "Select your university" }, :required => true, class: "modal-box modal-box-univ" %>
           </li>
           <li>
             <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "modal-box" %>

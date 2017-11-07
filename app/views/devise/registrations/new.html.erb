@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="modal-content">
+        <ul>
+            <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+            <p>Sign Up For Free</p>
+            <hr class="hr-devise">
+          <li>
+            <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name", class: "modal-box"%>
+          </li>
+          <li>
+            <%= f.text_field :email, required: true, autofocus: true, placeholder: "Email", class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.select :university, options_for_select(%w[McGill Concordia Others]), {:include_blank => "Select your university" }, :required => true, class: "modal-box modal-box-univ" %>
+          </li>
+          <li>
+            <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.password_field :password_confirmation, required: true, placeholder: "Password confirmation", class: "modal-box" %>
+          </li>
+          <li>
+            <%= f.submit 'Sign up', class: "modal-box btn btn-devise-ubk" %>
+          </li>
+            <hr class="footer-devise">
+            <% end %>
+          <li >
+            <%= render "devise/shared/links" %>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary" href="#myModal" data-toggle="modal" data-dismiss="modal">Log In</button>
+          </li>
+        </ul>
+    </div>
+    </div>
+  </div>
+</div>
